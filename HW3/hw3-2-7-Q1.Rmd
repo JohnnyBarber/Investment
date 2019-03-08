@@ -1,0 +1,69 @@
+---
+title: hw3-2-7-Q1
+output: pdf_document
+header:
+  - \usepackage{amsmath}
+---
+
+Cohort 2 - Group 7 (Huanyu Liu, Hyeuk Jung, Jiaqi Li, Xichen Luo)
+
+## Question 1
+
+|Maturity|coupon|par value|payment|
+|:------:|:----:|:-------:|:-----:|
+|3       |10    |100      |annual |
+
+|Maturity|Spot Rate|
+|:------:|:-------:|
+|1       |5%       |
+|2       |5.5%     |
+|3       |6.5%     |
+
+(a) Determine the bond's price and YTM
+
+**First, the bond's price.**
+\begin{align*}
+price &= \frac{10}{1.05} + \frac{10}{1.055^2} + \frac{110}{1.065^3} \\
+      &= 109.5717 \\
+\end{align*}
+**Using the bond price calculated above, we can also get the YTM.** 
+\begin{align*}
+109.5717 &= \frac{10}{1 + ytm} + \frac{10}{(1+ytm)^2} + \frac{110}{(1+ytm)^3} \\
+\end{align*}
+
+**Therefore, ytm = 0.0639**
+\vspace{\baselineskip}
+
+(b) Determine as many forward rates as you can, based on the spot rates above.
+
+**With given spot rates, we can get _three_ forward rates.**
+
+\begin{align*}
+f_{1,1} &= \frac{1.055^2}{1.05} - 1 = 0.06 \\
+f_{1,2} &= \sqrt{\frac{1.065^3}{1.05}} - 1 = 0.0726 \\
+f_{2,1} &= \frac{1.065^3}{1.055^2} - 1 = 0.0852 \\
+\end{align*}
+\vspace{\baselineskip}
+
+(c) You would like to get a guaranteed 3-year return on your coupon bond. Explain how this can be achieved using forward rates. Which forward rates should you use? What is your guaranteed 3-year return?
+
+**To lock the 3-year return, we have to roll over the cash flows' investments and exploit the forward rates.**
+**We have two methods. First, we can invest the coupons to $f_{1,1}, and f_{2,1}$.**
+\begin{align*}
+future price &= 10\times(1+f_{1,1})\times(1+f_{2,1}) + 10\times(1+f_{2,1}) + 110 \\
+             &= 10 \times 1.06 \times 1.0852 + 10 \times 1.0852 + 110 \\
+             &= 132.36 \\
+return &= \sqrt[3]{\frac{132.36}{109.5717}} - 1\\
+       &= 0.065\\
+\end{align*}
+
+**Second, we can invest 1st coupon in $f_{1,2}$ and 2nd coupon in $f_{2,1}.$**
+\begin{align*}
+future price &= 10\times(1+f_{1,2})^2 + 10\times(1+f_{2,1}) + 110 \\
+             &= 10 \times 1.0726^2 + 10 \times 1.0852 + 110 \\
+             &= 132.36 \\
+return &= \sqrt[3]{\frac{132.36}{109.5717}} - 1\\
+       &= 0.065\\
+\end{align*}
+
+**In both methods, we can see that the expected returns are the same, 6.5%.**

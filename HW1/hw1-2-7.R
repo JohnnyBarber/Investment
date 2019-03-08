@@ -1,0 +1,135 @@
+# Problem Set 1 Solution Template
+# mysoln is a list to store your answers
+
+# the first element of the list is a vector of names for the students in your group
+# make sure these match the names shown on the pdf document provided by the MFE office
+# using group 1 as an example:
+mysoln <- list(student = c("Huanyu Liu", "Jiaqi Li", "Hyeuk Jung", "Xichen Luo"))
+
+# disable scientific notation, and set the decimal precision of float.
+options(scipen=999)
+options(digits=4) 
+# 1
+
+# your code
+inv = 10000 # investment
+y = 3 # year
+r = 0.06 # annual rate
+
+result_ear = inv * (1+r)^y
+result_apr_q = inv * (1 + (r/4))^(y*4)
+result_apr_m = inv * (1 + (r/12))^(y*12)
+
+
+# answers
+a <- result_ear
+b <- result_apr_q
+c <- result_apr_m
+# add to list (start at the second element - the first element is a vectopr of names)
+mysoln[["Q1"]] <- c(a, b, c)
+
+# 2
+
+# code
+receiving = 500000*0.1
+marriage_y = 30
+r = 0.05
+discount_factor = 1 / (1+r)^3 # reflecting the fact that Charlotte will receive the payment every three years
+
+# a. 
+pv_a = receiving / ((1+r)^3 - 1) * (1 - discount_factor^10)
+
+# b. 700k = cf_new / ((1+r)^3 - 1) * (1 - discount_factor^10)
+cf_b = 700000 * ((1+r)^3 - 1) / (1 - discount_factor^10)
+
+# answers
+a <- pv_a
+b <- cf_b
+mysoln[["Q2"]] <- c(a, b)
+
+# 3
+
+# code
+saving = 200000 * 0.3 
+y = 35 # years
+r = 0.04 # rate
+sum_fv = 0
+
+# a. 
+for(i in 1:35) {
+  sum_fv = sum_fv + saving * (1 + r)^(y-i)
+}
+
+# b. sum_fv = consumption/(1+r) + consumption/(1+r)^2 + .... + consumption/(1+r)^20
+#           = consumption/r * (1 - 1/(1+r)^retirement_years)
+#   consumption = sum_fv * r / (1 - 1/(1+r)^retirement_years)
+retirement_years = 20
+consumption = sum_fv * r / (1 - 1/(1+r)^retirement_years)
+
+# answers
+a <- sum_fv
+b <- consumption
+mysoln[["Q3"]] <- c(a, b)
+
+# 4
+
+# code
+pv_mortgage = 400000
+y = 30
+r = 0.07 # monthly APR
+
+# a. Effective annual rate
+ear = (1 + r/12)^12 - 1
+
+# b. monthly payment
+# pv_mortgage = payment/(1+monthly_r) + payment/(1+monthly_r)^2 + ... + payment/(1+monthly_r)^n
+#             = payment / monthly_r * (1 - 1/(1+monthly_r)^n)
+# payment = pv_mortgage * monthly_r / (1 - 1/(1+monthly_r)^n)
+monthly_r = r / 12
+n = y * 12
+payment = pv_mortgage * monthly_r / (1 - 1/(1+monthly_r)^n)
+
+# c. principal + interest after the 20th monthly payment
+# at time = 20;
+# pv_20 = present value after 20 months.
+
+#Quick way
+
+pv_20 = 0
+month_left = 30 * 12 - 20
+for(i in 1:month_left) {
+  pv_20 = pv_20 + payment / (1+monthly_r)^i
+}
+
+# answers
+a <- ear
+b <- payment
+c <- pv_20
+mysoln[["Q4"]] <- c(a, b, c)
+
+# 5
+
+# code
+
+#No IRR:
+#Cash flows do not change signs.
+
+# example: pv = 0, CF0 = 200, CF1 = 600, CF2 = 500, there is no IRR
+a <- c(200, 600, 500)
+
+#Multiple IRRs: 
+#Cash flows change signs for more than once.
+
+# example: pv = 0, CF0 = -100, CF1 = 600, CF2 = -800, IRR1 = 1, IRR2 = 3
+
+
+b <- c(-100, 600, -800)
+
+# answers: change the numbers or extend the vector as needed
+mysoln[["Q5"]] <- list(a = a, b = b)
+
+#return my solution
+
+mysoln
+
+

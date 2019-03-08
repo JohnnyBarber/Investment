@@ -1,0 +1,206 @@
+---
+title: hw3-3
+output: pdf_document
+header:
+  - \usepackage{amsmath}
+---
+
+3. Consider the following 4 US Treasury bonds (the par value is $100):
+
+Bond A is a 5-year bond with a 1% annual coupon. Bond B is a 10-year bond with a 1% annual coupon. Bond C is a 5-year bond with a 4% annual coupon. Bond D is a 10-year bond with a 4% annual coupon.
+
+Assume all of the bonds are currently trading at a 3.5% yield and, as their maturity is over 1 year, they pay semi-annual coupons. Recall if a bond has a 4% annual coupon, it pays 2% of par every 6-months.
+
+(a) Write down the formula for pricing bonds.
+
+$$
+\text{PV} = \sum_{i=1}^n \frac{c}{(1+r_i)^i} + \frac{\text{principle}}{(1+r_n)^n}$$
+
+$$\text{where c = cash flows, n = total number of periods}
+$$
+
+(b) Compute the current price for each of the bonds.
+
+$$\text{semiannual yield} = 0.035/2 = 0.0175 \\$$
+
+**Bond A:**
+
+$$\text{CouponA}=0.01/2\times100=0.5 $$
+$$\text{total periods} = 5\times 2 = 10$$
+$$P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{10}}=88.62\\$$
+
+**Bond B:**
+
+$$\text{CouponB}=0.01/2\times100=0.5 $$
+$$\text{total periods} = 10\times 2 = 20$$
+$$P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{20}}=79.06\\$$
+
+**Bond C:**
+
+$$\text{CouponA}=0.04/2\times100=2 $$
+$$\text{total periods} = 5\times 2 = 10$$
+$$P_A=\sum_{i=1}^{10}\frac{2}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{10}}=102.28\\$$
+
+**Bond D:**
+
+$$\text{CouponB}=0.04/2\times100=2 $$
+$$\text{total periods} = 10\times 2 = 20$$
+$$P_B=\sum_{i=1}^{20}\frac{2}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{20}}=104.19\\$$
+
+(c) Suppose the yield increases to 3.8% from 3.5%. Compute the new prices and compute the change in the bond's price.
+
+$$\text{semiannual yield} = 0.038/2 = 0.019 \\$$
+
+**Bond A:**
+
+\begin{align*}
+&\text{CouponA}=0.01/2\times100=0.5\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.019)^i} +\frac{100}{(1+0.019)^{10}}=87.36\\
+&\Delta P_A=\text{new price} - \text{old price}= 87.36 - 88.62=-1.26\\
+\end{align*}
+
+**The price of bond A decreases $1.26 as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond B:**
+
+\begin{align*}
+&\text{CouponB}=0.01/2\times100=0.5 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.019)^i} +\frac{100}{(1+0.019)^{20}}=76.89\\
+&\Delta P_B=\text{new price} - \text{old price}=76.89 - 79.06 = -2.17\\
+\end{align*}
+
+**The price of bond B decreases $2.17 as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond C:**
+
+\begin{align*}
+&\text{CouponA}=0.04/2\times100=2\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_C=\sum_{i=1}^{10}\frac{2}{(1+0.019)^i} +\frac{100}{(1+0.019)^{10}}=100.90\\
+&\Delta P_C=\text{new price} - \text{old price}=100.90 - 102.28 = -1.38\\
+\end{align*}
+
+**The price of bond C decreases $1.38 as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond D:**
+
+\begin{align*}
+&\text{CouponB}=0.04/2\times100=2 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_D=\sum_{i=1}^{20}\frac{2}{(1+0.019)^i} +\frac{100}{(1+0.019)^{20}}=101.65\\
+&\Delta P_D=\text{new price} - \text{old price}=104.19 - 101.65 = -2.54\\
+\end{align*}
+
+**The price of bond D decreases $2.54 as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+(d) Suppose the yield decreases to 3.2% from 3.5%. Compute the new prices and compute the change in the bond's price.
+
+$$\text{semiannual yield} = 0.032/2 = 0.016 \\$$
+
+**Bond A:**
+
+\begin{align*}
+&\text{CouponA}=0.01/2\times100=0.5 \\
+&\text{total periods} = 5\times 2 = 10 \\
+&P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.016)^i} +\frac{100}{(1+0.016)^{10}}=89.91\\
+&\Delta P_A=\text{new price} - \text{old price}=89.91 - 88.62=1.29\\
+\end{align*}
+
+**The price of bond A increases $1.29 as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond B:**
+
+\begin{align*}
+&\text{CouponB}=0.01/2\times100=0.5 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.016)^i} +\frac{100}{(1+0.016)^{20}}=81.30\\
+&\Delta P_B=\text{new price} - \text{old price}=81.30 - 79.06 = 2.24\\
+\end{align*}
+
+**The price of bond B increases $2.24 as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond C:**
+
+\begin{align*}
+&\text{CouponA}=0.04/2\times100=2\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_C=\sum_{i=1}^{10}\frac{2}{(1+0.016)^i} +\frac{100}{(1+0.016)^{10}}=103.67\\
+&\Delta P_C=\text{new price} - \text{old price}=103.67 - 102.28 = 1.39
+\end{align*}
+
+**The price of bond C increases $1.39 as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond D:**
+
+\begin{align*}
+&\text{CouponB}=0.04/2\times100=2 \\
+&\text{total periods} = 10\times 2 = 20 \\
+&P_D=\sum_{i=1}^{20}\frac{2}{(1+0.016)^i} +\frac{100}{(1+0.016)^{20}}=106.80\\
+&\Delta P_D=\text{new price} - \text{old price}=106.80 - 104.19 = 2.61
+\end{align*}
+
+**The price of bond D increases $2.61 as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+(e) Compute durations of each of these bonds and answer (c) and (d) using duration.
+
+**Duration A:**
+
+\begin{align*}
+&D_A=(\sum_{t=1}^{10}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{10}\frac{\text{CouponA}\times t}{P_A\times 1.0175^t}+\frac{100\times 10}{P_A\times1.0175^{10}})\times\frac{1}{2}=4.88\\
+&D_A^* =\frac{D_A}{1.0175}=4.80\\
+\end{align*}
+
+**Duration B:**
+
+\begin{align*}
+&D_B=(\sum_{t=1}^{20}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{20}\frac{\text{CouponB}\times t}{P_B\times 1.0175^t}+\frac{100\times20}{P_B\times1.0175^{20}})\times\frac{1}{2}=9.466\\
+&D_B^* =\frac{D_B}{1.0175}=9.30\\
+\end{align*}
+
+**Duration C:**
+
+\begin{align*}
+&D_C=(\sum_{t=1}^{10}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{10}\frac{\text{CouponC}\times t}{P_C\times 1.0175^t}+\frac{100\times 10}{P_C\times1.0175^{10}})\times\frac{1}{2}=4.59\\
+&D_C^* =\frac{D_C}{1.0175}=4.51\\
+\end{align*}
+
+**Duration D:**
+
+\begin{align*}
+&D_D=(\sum_{t=1}^{20}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{20}\frac{\text{CouponD}\times t}{P_D\times 1.0175^t}+\frac{100\times20}{P_D\times1.0175^{20}})\times\frac{1}{2}=8.38\\
+&D_D^* =\frac{D_D}{1.0175}=8.24\\
+\end{align*}
+
+**When the yield increases 30 basis points:**
+
+**Bond A price approximate change** = $-0.003\times D_A^* \times P_A=-1.28\\$
+**Bond B price approximate change** = $-0.003\times D_B^* \times P_B=-2.21\\$
+**Bond C price approximate change** = $-0.003\times D_C^* \times P_C=-1.38\\$
+**Bond D price approximate change** = $-0.003\times D_D^* \times P_D=-2.57\\$
+
+**When the yield decreases 30 basis points:**
+
+**Bond A price approximate change** = $0.003\times D_A^* \times P_B=1.28\\$
+**Bond B price approximate change** = $0.003\times D_B^* \times P_B=2.21\\$
+**Bond C price approximate change** = $0.003\times D_C^* \times P_C=1.38\\$
+**Bond D price approximate change** = $0.003\times D_D^* \times P_D=2.57\\$
+
+(f) What can you conclude about reaction of bond prices to changes in yields for bonds with differet coupons and maturities?
+
+**Coupons:**
+
+**The higher a bond's coupon, the more income it produces early on and thus the shorter its duration. The lower the coupon, the longer the duration (and volatility).**
+
+**Maturities:**
+
+**The longer a bond's maturity, the greater its duration (and volatility).**

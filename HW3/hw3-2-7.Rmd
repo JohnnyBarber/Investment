@@ -1,0 +1,368 @@
+---
+title: hw3-2-7
+output: pdf_document
+header:
+  - \usepackage{amsmath}
+---
+
+Cohort 2 - Group 7 (Huanyu Liu, Hyeuk Jung, Jiaqi Li, Xichen Luo)
+
+## Question 1
+
+|Maturity|coupon|par value|payment|
+|:------:|:----:|:-------:|:-----:|
+|3       |10    |100      |annual |
+
+|Maturity|Spot Rate|
+|:------:|:-------:|
+|1       |5%       |
+|2       |5.5%     |
+|3       |6.5%     |
+
+(a) Determine the bond's price and YTM
+
+**First, the bond's price.**
+\begin{align*}
+price &= \frac{10}{1.05} + \frac{10}{1.055^2} + \frac{110}{1.065^3} \\
+      &= 109.5717 \\
+\end{align*}
+**Using the bond price calculated above, we can also get the YTM.** 
+\begin{align*}
+109.5717 &= \frac{10}{1 + ytm} + \frac{10}{(1+ytm)^2} + \frac{110}{(1+ytm)^3} \\
+\end{align*}
+
+**Therefore, ytm = 0.0639**
+\vspace{\baselineskip}
+
+(b) Determine as many forward rates as you can, based on the spot rates above.
+
+**With given spot rates, we can get _three_ forward rates.**
+
+\begin{align*}
+f_{1,1} &= \frac{1.055^2}{1.05} - 1 = 0.06 \\
+f_{1,2} &= \sqrt{\frac{1.065^3}{1.05}} - 1 = 0.0726 \\
+f_{2,1} &= \frac{1.065^3}{1.055^2} - 1 = 0.0852 \\
+\end{align*}
+\vspace{\baselineskip}
+
+(c) You would like to get a guaranteed 3-year return on your coupon bond. Explain how this can be achieved using forward rates. Which forward rates should you use? What is your guaranteed 3-year return?
+
+**To lock the 3-year return, we have to roll over the cash flows' investments and exploit the forward rates.**
+**We have two methods. First, we can invest the coupons to $f_{1,1}, and f_{2,1}$.**
+\begin{align*}
+future price &= 10\times(1+f_{1,1})\times(1+f_{2,1}) + 10\times(1+f_{2,1}) + 110 \\
+             &= 10 \times 1.06 \times 1.0852 + 10 \times 1.0852 + 110 \\
+             &= 132.36 \\
+return &= \sqrt[3]{\frac{132.36}{109.5717}} - 1\\
+       &= 0.065\\
+\end{align*}
+
+**Second, we can invest 1st coupon in $f_{1,2}$ and 2nd coupon in $f_{2,1}.$**
+\begin{align*}
+future price &= 10\times(1+f_{1,2})^2 + 10\times(1+f_{2,1}) + 110 \\
+             &= 10 \times 1.0726^2 + 10 \times 1.0852 + 110 \\
+             &= 132.36 \\
+return &= \sqrt[3]{\frac{132.36}{109.5717}} - 1\\
+       &= 0.065\\
+\end{align*}
+
+**In both methods, we can see that the expected returns are the same, 6.5%.**
+
+## Question 2
+
+You will receive \$1M one year from now, but will not need to use it until three years from now. You thus need to invest the \$1M for two years.
+
+(a) Suppose that you want to guarantee a rate today for your investment. What is the relevant forward rate?
+
+**The relevant forward rate: ${}_{1}f_{2}$, which is between year 1 and 3.**
+\vspace{\baselineskip}
+
+(b) Suppose that the one-year spot rate is 6% and the three-year spot rate is 7%. Compute the forward rate in (a).
+
+**The forward rate:**$\\$
+$$(1+{}_{1}f_{2})^2=\frac{(1+r_3)^3}{1+r_1}\\$$
+$${}_{1}f_{2}=0.075= 7.5\%\\$$
+**The relevant forward rate is 7.5%.**$\\$
+
+(c) Suppose that you are unable to contact a bank that offers forward rates. You can contact, however, a dealer who trades zero-coupon bonds. Explain how you can use zero-coupon bonds to lock in the forward rate in (a).
+
+**The strategy to lock in the future rate:**$\\$
+**In year 0:**$\\$
+Short one-year zero-coupon bonds for $\frac{1 \text{M}}{1+r_1}$ dollars, and then use the money received from the sell to long three-year zero-coupon bonds for $\frac{1 \text{M}}{1+r_1}$ dollars. $\\$
+No net initial investment because the cash inflow equals cash outflow, which is $\frac{1 \text{M}}{1+r_1}$. $\\$
+**In year 1:**$\\$
+Pay the one-year ZCB with the money receiving \text{\$1M} in year 1. $\\$
+**In year 3:**$\\$ 
+There will be a cash inflow of $\frac{1 \text{M}\times(1+r_3)^3}{1+r_1}$ dollars.$\\$
+This implies the rate ${}_{1}f_{2}$ between years 1 and 3.
+
+## Question 3
+
+3. Consider the following 4 US Treasury bonds (the par value is $100):
+
+Bond A is a 5-year bond with a 1% annual coupon. Bond B is a 10-year bond with a 1% annual coupon. Bond C is a 5-year bond with a 4% annual coupon. Bond D is a 10-year bond with a 4% annual coupon.
+
+Assume all of the bonds are currently trading at a 3.5% yield and, as their maturity is over 1 year, they pay semi-annual coupons. Recall if a bond has a 4% annual coupon, it pays 2% of par every 6-months.
+
+(a) Write down the formula for pricing bonds.
+
+$$
+\text{PV} = \sum_{i=1}^n \frac{c}{(1+r_i)^i} + \frac{\text{principle}}{(1+r_n)^n}$$
+
+$$\text{where c = cash flows, n = total number of periods}
+$$
+
+(b) Compute the current price for each of the bonds.
+
+$$\text{semiannual yield} = 0.035/2 = 0.0175 \\$$
+
+**Bond A:**
+
+$$\text{CouponA}=0.01/2\times100=0.5 $$
+$$\text{total periods} = 5\times 2 = 10$$
+$$P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{10}}=88.62\\$$
+
+**Bond B:**
+
+$$\text{CouponB}=0.01/2\times100=0.5 $$
+$$\text{total periods} = 10\times 2 = 20$$
+$$P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{20}}=79.06\\$$
+
+**Bond C:**
+
+$$\text{CouponC}=0.04/2\times100=2 $$
+$$\text{total periods} = 5\times 2 = 10$$
+$$P_C=\sum_{i=1}^{10}\frac{2}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{10}}=102.28\\$$
+
+**Bond D:**
+
+$$\text{CouponD}=0.04/2\times100=2 $$
+$$\text{total periods} = 10\times 2 = 20$$
+$$P_D=\sum_{i=1}^{20}\frac{2}{(1+0.0175)^i} +\frac{100}{(1+0.0175)^{20}}=104.19\\$$
+
+(c) Suppose the yield increases to 3.8% from 3.5%. Compute the new prices and compute the change in the bond's price.
+
+$$\text{semiannual yield} = 0.038/2 = 0.019 \\$$
+
+**Bond A:**
+
+\begin{align*}
+&\text{CouponA}=0.01/2\times100=0.5\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.019)^i} +\frac{100}{(1+0.019)^{10}}=87.36\\
+&\Delta P_A=\frac{\text{new price} - \text{old price}}{\text{old price}}= \frac{87.36 - 88.62}{88.62}=\frac{-1.26}{88.62} = -0.0143\\
+\end{align*}
+
+**The price of bond A decreases $1.26 (-1.43%) as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond B:**
+
+\begin{align*}
+&\text{CouponB}=0.01/2\times100=0.5 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.019)^i} +\frac{100}{(1+0.019)^{20}}=76.89\\
+&\Delta P_B=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{76.89 - 79.06}{79.06} = \frac{-2.17}{79.06} = -0.0275\\
+\end{align*}
+
+**The price of bond B decreases $2.17 (-2.75%) as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond C:**
+
+\begin{align*}
+&\text{CouponC}=0.04/2\times100=2\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_C=\sum_{i=1}^{10}\frac{2}{(1+0.019)^i} +\frac{100}{(1+0.019)^{10}}=100.90\\
+&\Delta P_C=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{100.90 - 102.28}{102.28} = \frac{-1.38}{102.28} = -0.0134\\
+\end{align*}
+
+**The price of bond C decreases $1.38 (-1.34%) as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+**Bond D:**
+
+\begin{align*}
+&\text{CouponD}=0.04/2\times100=2 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_D=\sum_{i=1}^{20}\frac{2}{(1+0.019)^i} +\frac{100}{(1+0.019)^{20}}=101.65\\
+&\Delta P_D=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{104.19 - 101.65}{101.65} = \frac{-2.54}{101.65} = -0.0244\\
+\end{align*}
+
+**The price of bond D decreases $2.54 (-2.44%) as the yield increases to 3.8%.**
+\vspace{\baselineskip}
+
+(d) Suppose the yield decreases to 3.2% from 3.5%. Compute the new prices and compute the change in the bond's price.
+
+$$\text{semiannual yield} = 0.032/2 = 0.016 \\$$
+
+**Bond A:**
+
+\begin{align*}
+&\text{CouponA}=0.01/2\times100=0.5 \\
+&\text{total periods} = 5\times 2 = 10 \\
+&P_A=\sum_{i=1}^{10}\frac{0.5}{(1+0.016)^i} +\frac{100}{(1+0.016)^{10}}=89.91\\
+&\Delta P_A=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{89.91 - 88.62}{88.62}=\frac{1.29}{88.62} = 0.0145\\
+\end{align*}
+
+**The price of bond A increases $1.29 (1.45%) as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond B:**
+
+\begin{align*}
+&\text{CouponB}=0.01/2\times100=0.5 \\
+&\text{total periods} = 10\times 2 = 20\\
+&P_B=\sum_{i=1}^{20}\frac{0.5}{(1+0.016)^i} +\frac{100}{(1+0.016)^{20}}=81.30\\
+&\Delta P_B=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{81.30 - 79.06}{79.06} = \frac{2.24}{79.06} = 0.0283\\
+\end{align*}
+
+**The price of bond B increases $2.24 (2.83%) as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond C:**
+
+\begin{align*}
+&\text{CouponA}=0.04/2\times100=2\\
+&\text{total periods} = 5\times 2 = 10\\
+&P_C=\sum_{i=1}^{10}\frac{2}{(1+0.016)^i} +\frac{100}{(1+0.016)^{10}}=103.67\\
+&\Delta P_C=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{103.67 - 102.28}{102.28} = \frac{1.39}{102.28} = 0.0136
+\end{align*}
+
+**The price of bond C increases $1.39 (1.36%) as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+**Bond D:**
+
+\begin{align*}
+&\text{CouponB}=0.04/2\times100=2 \\
+&\text{total periods} = 10\times 2 = 20 \\
+&P_D=\sum_{i=1}^{20}\frac{2}{(1+0.016)^i} +\frac{100}{(1+0.016)^{20}}=106.80\\
+&\Delta P_D=\frac{\text{new price} - \text{old price}}{\text{old price}}=\frac{106.80 - 104.19}{104.19} = \frac{2.61}{104.19} = 0.0251
+\end{align*}
+
+**The price of bond D increases $2.61 (2.51%) as the yield decreases to 3.2%.**
+\vspace{\baselineskip}
+
+(e) Compute durations of each of these bonds and answer (c) and (d) using duration.
+
+**Duration A:**
+
+\begin{align*}
+&D_A=(\sum_{t=1}^{10}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{10}\frac{\text{CouponA}\times t}{P_A\times 1.0175^t}+\frac{100\times 10}{P_A\times1.0175^{10}})\times\frac{1}{2}=4.88\\
+&D_A^* =\frac{D_A}{1.0175}=4.80\\
+\end{align*}
+
+**Duration B:**
+
+\begin{align*}
+&D_B=(\sum_{t=1}^{20}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{20}\frac{\text{CouponB}\times t}{P_B\times 1.0175^t}+\frac{100\times20}{P_B\times1.0175^{20}})\times\frac{1}{2}=9.466\\
+&D_B^* =\frac{D_B}{1.0175}=9.30\\
+\end{align*}
+
+**Duration C:**
+
+\begin{align*}
+&D_C=(\sum_{t=1}^{10}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{10}\frac{\text{CouponC}\times t}{P_C\times 1.0175^t}+\frac{100\times 10}{P_C\times1.0175^{10}})\times\frac{1}{2}=4.59\\
+&D_C^* =\frac{D_C}{1.0175}=4.51\\
+\end{align*}
+
+**Duration D:**
+
+\begin{align*}
+&D_D=(\sum_{t=1}^{20}w(t)\times t) \times\frac{1}{2} =(\sum_{t=1}^{20}\frac{\text{CouponD}\times t}{P_D\times 1.0175^t}+\frac{100\times20}{P_D\times1.0175^{20}})\times\frac{1}{2}=8.38\\
+&D_D^* =\frac{D_D}{1.0175}=8.24\\
+\end{align*}
+
+**When the yield increases 30 basis points:**
+
+**Bond A price approximate change** = $-0.003\times D_A^* \times P_A=-1.28\\$
+**Bond B price approximate change** = $-0.003\times D_B^* \times P_B=-2.21\\$
+**Bond C price approximate change** = $-0.003\times D_C^* \times P_C=-1.38\\$
+**Bond D price approximate change** = $-0.003\times D_D^* \times P_D=-2.57\\$
+
+**When the yield decreases 30 basis points:**
+
+**Bond A price approximate change** = $0.003\times D_A^* \times P_B=1.28\\$
+**Bond B price approximate change** = $0.003\times D_B^* \times P_B=2.21\\$
+**Bond C price approximate change** = $0.003\times D_C^* \times P_C=1.38\\$
+**Bond D price approximate change** = $0.003\times D_D^* \times P_D=2.57\\$
+
+(f) What can you conclude about reaction of bond prices to changes in yields for bonds with differet coupons and maturities?
+
+**Coupons:**
+
+**The higher a bond's coupon, the more income it produces early on and thus the shorter its duration. The lower the coupon, the longer the duration (and volatility).**
+
+**Maturities:**
+
+**The longer a bond's maturity, the greater its duration (and volatility).**
+
+## Question 4
+
+You just sold to a client a custom-made 31-year bond which pays a single coupon of \$ 1M 30 years from now and \$ 2M at maturity. You would like to hedge this liability. Assume that the term structure is currently flat at 6\%.
+
+a) Your first idea is to synthetically replicate the liability. Construct the hedging portfolio consisting of the following bonds paying annual coupons:
+
+|Bond|Coupon rate (\%)|Maturity|
+|:--:|:--------------:|:------:|
+|A   |      0         |31 years|
+|B   |      4         |30 years|
+|C   |      6         |30 years|
+
+The par values of the three bonds are $ 100.
+
+**Suppose we buy x Bond A, y Bond B, z Bond C (negative value means short that amount of bond). To eliminate any future payments, we have: **
+\begin{align*}
+100x &= 2000000\\
+4y + 6z &= 0\\
+104y + 106z &= 1000000\\
+x &= 20000\\
+y &= 30000\\
+z &= -20000\\
+\end{align*}
+**We should buy 20000 Bond A, 30000 Bond B, and sell 20000 Bond C to replicate the liability**
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+b) You consider instead duration-based hedging. Assume that you have 10- and 15- year zero-coupon bonds available, with par values \$ 100. Construct the hedging portfolio of the two bonds that has the same market value and the same interest- rate sensitivity (measured using the duration model) as your liability.
+
+\begin{align*}
+\textbf{present value of the liability} &= \frac{1000000}{1.06^{30}} + \frac{2000000}{1.06^{31}}\\\\
+&= 502619.81\\\\
+\textbf{duration of the liabillity} &= \frac{\frac{1000000}{1.06^{30}}}{502619.81} \times 30 + \frac{\frac{2000000}{1.06^{31}}}{502619.81} \times 31\\\\
+&= 30.65\\
+\end{align*}
+**Suppose we buy x 10-year ZCB, y 15-year ZCB (negative value means short that amount of bond). The market value and the duration of the new portfolio are the same as those of the liability, so we have: **
+\begin{align*}
+\textbf{price of 10-year ZCB} &= \frac{100}{1.06^{10}} = 55.84\\
+\textbf{price of 15-year ZCB} &= \frac{100}{1.06^{15}} = 41.73\\\\
+55.84x + 41.73y &= 502619.81\\\\
+\textbf{duration of portfolio} &= \frac{55.84x}{502619.81} \times 10 + \frac{41.73y}{502619.81} \times 15\\\\ 
+\frac{55.84x}{502619.81} \times 10 + \frac{41.73y}{502619.81} \times 15 &= 30.65\\\\
+x &= -28180.09\\
+y &= 49756.89\\
+\end{align*}
+
+**We should sell 28180 10-year ZCB, and buy 49757 15-year ZCB to hedge the liability.**
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+c) Suppose the interest rate fell to 4.8\%. Would your hedging portfolio computed in part (b) remain the same? If not, explain why not and comment on the composition of the new hedging portfolio relative to the old one. (No computations are necessary.)
+
+**No, the hedging portfolio will not remain the same.**
+
+**We should short more 10-year ZCB and long more 15-year ZCB in the new hedging portfolio.**
+**Because the convexity of the liability is larger than that of the hedging portfolio, with the large decrease of interest rate, both the duration and the market value of the liability will increase more than those of the portfolio. In order to match both the duration and the market value, we should short more 10-year ZCB and long more 15-year ZCB.**
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+d) What are the advantages of synthetic replication (option described in part (i)) relative to approximate hedging (option described in part (ii))? Why might one use approximate hedging instead?
+
+**Synthetic replication matches the cash flows of the liabilities perfectly. It does not need to rebalance with the change of interest rate.**
+
+**Sometimes it may be very difficult or very costly to find the proper securities to do the synthetic replication, while it's relatively easy to use approximate hedging by matching the duration.**

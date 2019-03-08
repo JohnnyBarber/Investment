@@ -1,0 +1,124 @@
+---
+title: hw2-2-7
+output: pdf_document
+header:
+  - \usepackage{amsmath}
+---
+
+Cohort 2 - Group 7 (Huanyu Liu, Hyeuk Jung, Jiaqi Li, Xichen Luo)
+
+## Question 1
+Assume that spot rates are as follows:
+
+|Maturity|Spot Rate|
+|:------:|:-------:|
+|1       |5%       |
+|2       |5.5%     |
+|3       |6%       |
+|4       |6.3%     |
+
+Spot rates are with annual compounding, coupon payments are annual, and par values
+are $100. Compute the prices of the following bonds:
+
+(a) A zero-coupon bond with 3 years to maturity.
+
+$$
+\frac{100}{(1+0.06)^3} = 83.96
+$$
+
+**The price of such a zero-coupon bond is 83.96.**
+
+$$
+\frac{100}{(1+\text{ytm})^3} = 83.96\\
+$$
+**Solve and we get ytm = 0.06**
+
+(b) A bond with coupon rate 6% and 2 years to maturity.
+
+$$
+\frac{6}{(1+0.05)} + \frac{106}{(1+0.055)^2} = 100.95
+$$
+
+**The price of such a coupon bond is 100.95.**
+
+$$
+\frac{6}{(1+\text{ytm})} + \frac{106}{(1+\text{ytm})^2} = 100.95 \\
+$$
+**Solve and we get ytm = 0.0548.**
+
+(c) A bond with coupon rate 8% and 4 years to maturity.
+
+$$
+\frac{8}{(1+0.05)} + \frac{8}{(1+0.05)^2} + \frac{8}{(1+0.05)^3} + \frac{108}{(1+0.05)^4} = 106.11
+$$
+
+**The price of such coupon bond is 106.11.**
+
+$$
+\frac{8}{(1+\text{ytm})} + \frac{8}{(1+\text{ytm})^2} + \frac{8}{(1+\text{ytm})^3} + \frac{108}{(1+\text{ytm})^4} = 106.11
+$$
+**Solve and we get ytm = 0.0623**
+
+
+
+## Question 2
+
+|Bond |Coupon (annual) |Price  |Maturity  |
+|:---:|:--------------:|:-----:|:--------:|
+|X    |100 * 4% = $4   |100.98 |6 months  |
+|Y    |100 * 6% = $6   |103.58 |1 year    |
+
+**Let's denote 6-month spot rate as r.6month and 1-year spot rate as r.1yr**. 
+\vspace{\baselineskip}
+
+**First, current price of Bond X is calculated as follow:**
+$$100.98 = \frac{100 + coupon/2}{1 + \frac{r.6month}{2}} = \frac{100 + 3}{1 + \frac{r.6month}{2}}$$
+
+**Using the above equation, we can get the 6-month spot rate.**
+
+$$1 + \frac{r.6month}{2} = \frac{103}{100.98} = 1.0101$$
+
+**Therefore, r.6month = (1.0101 - 1) $\times$ 2 = 0.0202**.
+
+\vspace{\baselineskip}
+
+**Now, using the Bond Y and 6-month spot rate, we can also get the 1-year spot rate.**
+
+$$103.59 =  \frac{coupon/2}{1+\frac{r.6month}{2}} + \frac{100 + coupon/2}{(1+\frac{r.1yr}{2})^2} = \frac{3}{1+\frac{0.0202}{2}} + \frac{103}{(1+\frac{r.1yr}{2})^2}$$
+
+$$\frac{103}{(1+\frac{r.1yr}{2})^2} = 103.59 - \frac{3}{1+0.0101} = 103.59 - 2.97 = 100.62$$
+
+$$(1+\frac{r.1yr}{2})^2 = \frac{103}{100.62} = 1.0237$$
+
+$$1+\frac{r.1yr}{2} = \sqrt{1.0237} = 1.0118$$
+
+**Therefore, r.1yr = (1.0118 - 1) $\times$ 2 = 0.0235**.
+
+
+
+## Question 3
+
+**Suppose we buy x Bond A, y Bond B, z Bond C (negative value means short that amount of bond). To eliminate any future payments, we have: **
+\begin{align*}
+100x + 5y + 7z &= 0\\
+105y + 107z &= 0\\
+x &= -\frac{2}{105}z\\
+y &= -\frac{107}{105}z\\
+\end{align*}
+**To get an arbitrage opportunity at the initial state, there must be positive cash inflow at initial state, so we have: **
+\begin{align*}
+-95.238x - 98.438y - 103.37z &> 0\\
+-95.238 \times (-\frac{2}{105})z - 98.438 \times (-\frac{107}{105})z - 103.37z &> 0\\
+-1.243z &> 0\\
+z &< 0\\
+\end{align*}
+**z is negative, so we have to short bond C.**
+
+**The arbitrage strategy is: **
+
+**Suppose we short 1 bond C and we have to long $\frac{2}{105}$ bond A and $\frac{107}{105}$ bond B, so that there will be no future cash flow. The arbitrage opportunity cash inflow is:**
+\begin{align*}
+\qquad&-95.238 \times \frac{2}{105} - 98.438 \times \frac{107}{105} + 103.37 \times 1\\
+&= 1.2429
+\end{align*}
+

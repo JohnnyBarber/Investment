@@ -1,0 +1,47 @@
+---
+title: hw2-2-7-Q2
+output: pdf_document
+header:
+  - \usepackage{amsmath}
+---
+
+## Question 1
+
+
+
+## Question 2
+
+Bond X: Par = 100 | Coupon = 100 $\times$ 4% = 4 | Price = 100.98 | Maturity = 6 months
+
+Bond Y: Par = 100 | Coupon = 100 $\times$ 6% = 6 | Price = 103.59 | Maturity = 1 year
+
+Let's denote 6-month spot rate as _r.6month_ and 1-year spot rate as _r.1yr_. 
+\vspace{\baselineskip}
+
+First, current price of Bond X is calculated as follow:
+$100.98 = \frac{100 + coupon/2}{1 + \frac{r.6month}{2}} = \frac{100 + 3}{1 + \frac{r.6month}{2}}$
+
+Using the above equation, we can get the 6-month spot rate.
+
+$1 + \frac{r.6month}{2} = \frac{103}{100.98} = 1.0101$
+
+Therefore, __r.6month = (1.0101 - 1) $\times$ 2 = 0.0202__.
+
+\vspace{\baselineskip}
+
+Now, using the Bond Y and 6-month spot rate, we can also get the 1-year spot rate.
+
+$103.59 =  \frac{coupon/2}{1+\frac{r.6month}{2}} + \frac{100 + coupon/2}{(1+\frac{r.1yr}{2})^2} = \frac{3}{1+\frac{0.0202}{2}} + \frac{103}{(1+\frac{r.1yr}{2})^2}$
+
+$\frac{103}{(1+\frac{r.1yr}{2})^2} = 103.59 - \frac{3}{1+0.0101} = 103.59 - 2.97 = 100.62$
+
+$(1+\frac{r.1yr}{2})^2 = \frac{103}{100.62} = 1.0237$
+
+$1+\frac{r.1yr}{2} = \sqrt{1.0237} = 1.0118$
+
+Therefore, __r.1yr = (1.0118 - 1) $\times$ 2 = 0.0236__.
+
+
+
+## Question 3
+

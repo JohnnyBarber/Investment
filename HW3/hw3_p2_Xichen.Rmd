@@ -1,0 +1,31 @@
+---
+title: "lecture3p_Xichen"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Problem 2
+
+(a) The relevant forward rate: ${}_{1}f_{2}$, which is between year 1 and 3.
+$\\$
+(b) The forward rate:$\\$
+$$(1+{}_{1}f_{2})^2=\frac{(1+r_3)^3}{1+r_1}\\$$
+$${}_{1}f_{2}=0.08=8\%\\$$
+The relevant forward rate is 8%.$\\$
+$\\$
+(c) The strategy to lock in the future rate:$\\$
+In year 0:$\\$
+Short one-year zero-coupon bonds for $\frac{1 \text{M}}{1+r_1}$ dollars, and then use the money receivd from the sell to long three-year zero-coupon bonds for $\frac{1 \text{M}}{1+r_1}$ dollars. $\\$
+No net initial investment because the cash inflow equals cash outflow, which is $\frac{1 \text{M}}{1+r_1}$. $\\$
+In year 1:$\\$
+There will be a cash outflow of 1\text{M} dollars.$\\$
+At year 3:$\\$ 
+There will be a cash inflow of $\frac{1 \text{M}\times(1+r_3)^3}{1+r_1}$ dollars.$\\$
+This implies the rate ${}_{1}f_{2}$ between years 1 and 3.
+
+
+

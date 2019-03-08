@@ -1,0 +1,98 @@
+---
+title: "hw5-2-7"
+output: pdf_document
+---
+
+$$\text{Cohort 2 - Group 7 (Huanyu Liu, Hyeuk Jung, Jiaqi Li, Xichen Luo)}$$
+
+### Arithmetic average returns
+
+1. Daily returns
+$\\$
+The average arithmetic daily returns is the arithmetic average of daily returns from 1/3/1972 through 12/30/2017, noted as 
+$$\bar{R}_{daily}=\frac{\sum{R_{daily}}}{\text{Total number of business days}}$$
+Annualize the return:
+$$a.\bar{R}_{daily}=\bar{R}_{daily} \times 365=0.1665$$
+
+2. Monthly returns
+$\\$
+The average arithmetic monthly returns is the arithmetic average of monthly returns from 1/3/1972 through 12/30/2017
+$\\$
+Calculate monthly returns for each month:
+$$\bar{R}^{'}_{monthly}=\sum{R_{\text{daily in a month}}}$$
+Arithmetic average of monthly returns:
+$$\bar{R}_{monthly}=\frac{\sum\bar{R}^{'}_{monthly}}{\text{Total amount of months}}$$
+Annualize the return:
+$$a.\bar{R}_{monthly}=\bar{R}_{monthly} \times 12=0.1151$$
+
+3. Yearly returns
+$\\$
+The average arithmetic yearly returns is the arithmetic average of yearly returns from 1/3/1972 through 12/30/2017
+$\\$
+Calculate returns for each year:
+$$\bar{R}^{'}_{yearly}=\sum{R_{\text{daily in a year}}}$$
+Arithmetic average of yearly returns:
+$$\bar{R}_{yearly}=\frac{\sum\bar{R}^{'}_{yearly}}{\text{Total amount of years}}$$
+Annualize the return:
+$$a.\bar{R}_{yearly}=\bar{R}_{yearly}=0.1151$$
+
+4. 5-year returns
+$\\$
+The average arithmetic 5-year returns is the arithmetic average of 5-year returns from 1/3/1972 through 12/30/2016
+$\\$
+Calculate returns for each 5 years:
+$$\bar{R}^{'}_{5yr}=\sum{R_{\text{daily in 5 years}}}$$
+Arithmetic average of 5-year returns:
+$$\bar{R}_{5yr}=\frac{\sum\bar{R}^{'}_{5yr}}{\text{Total amount of 5 years}}$$
+Annualize the return:
+$$a.\bar{R}_{5yr}=\bar{R}_{5yr} \div5=0.1132$$
+
+### Geometric average returns
+
+1. Daily returns
+$\\$
+Calculate the geometric daily returns:
+$$\bar{R}_{daily}=\sqrt[t]{(R_1+1)(R_2+1)...(R_t+1)}-1$$
+where
+$$t=\text{the total amount of business days from 1/3/1972 through 12/30/2017}$$
+Annualize the return:
+$$a.\bar{R}_{daily}=(1+\bar{R}_{daily}) ^ {365}-1=0.1571$$
+
+2. Monthly returns
+$\\$
+Calculate the geometric monthly returns: 
+$$\bar{R}_{monthly}=(R_1+1)(R_2+1)...(R_t+1)-1$$
+where
+$$t=\text{the total amount of business days in a month}$$
+Calculate the geometric average of monthly returns from 1/3/1972 through 12/30/2017:
+$$\bar{R}_{monthly}=\sqrt[k]{(\bar{R}_{monthly_1}+1)(\bar{R}_{monthly_2}+1)...(\bar{R}_{monthly_k}+1)}-1$$
+where
+$$k=\text{the total amount of months from 1/3/1972 through 12/30/2017}$$
+Annualize the return:
+$$a.\bar{R}_{monthly}=(1+\bar{R}_{monthly}) ^ {12}-1=0.1061$$
+
+3. Yearly returns
+$\\$
+Calculate the geometric yearly returns: 
+$$\bar{R}_{yearly}=(R_1+1)(R_2+1)...(R_t+1)-1$$
+where
+$$t=\text{the total amount of business days in a year}$$
+Calculate the geometric average of yearly returns from 1/3/1972 through 12/30/2017:
+$$\bar{R}_{yearly}=\sqrt[i]{(\bar{R}_{yearly_1}+1)(\bar{R}_{yearly_2}+1)...(\bar{R}_{yearly_i}+1)}-1$$
+where
+$$i=\text{the total amount of years from 1/3/1972 through 12/30/2017}$$
+Annualize the return:
+$$a.\bar{R}_{yearly}=\bar{R}_{yearly}=0.1061$$
+
+4. 5-year returns
+$\\$
+Calculate the geometric 5 years returns:  
+$$\bar{R}_{5yr}={(R_1+1)(R_2+1)...(R_t+1)}-1$$
+where
+$$t=\text{the total amount of business days in 5 years}$$
+Calculate the geometric average of 5-year returns from 1/3/1972 through 12/30/2016:
+$$\bar{R}_{5yr}=\sqrt[j]{(\bar{R}_{5yr_1}+1)(\bar{R}_{5yr_2}+1)...(\bar{R}_{5yr_j}+1)}-1$$
+where
+$$j=\text{the total amount of 5 years from 1/3/1972 through 12/30/2016}$$
+Annualize the return:
+$$a.\bar{R}_{5yr}=\sqrt[5]{1+\bar{R}_{5yr}}-1=0.1037$$
